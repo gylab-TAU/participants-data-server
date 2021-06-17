@@ -1,0 +1,29 @@
+{
+  "name": "participants-data-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "start": "npm run build && node dist/server.js",
+    "build": "rimraf dist/ && babel ./ --out-dir dist/ --ignore ./node_modules,./.babelrc,./package-json --copy files"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gylab-TAU/participants-data-server.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gylab-TAU/participants-data-server/issues"
+  },
+  "homepage": "https://github.com/gylab-TAU/participants-data-server#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "rimraf": "^3.0.2"
+  }
+}
