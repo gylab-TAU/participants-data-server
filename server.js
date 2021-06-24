@@ -19,6 +19,14 @@ app.get('/aaa', async (req, res) => {
     return res.status(200).send(a);
 });
 
+app.get('/getAllExperimentParticipants/:experimentName', async(req, res) => {
+    let db = new dbConnector();
+    let query = "SELECT * FROM experiments.experiment_participants WHERE experiment_name = '" + req.params.experimentName + "';";
+    let participants = await db.executeQuery(query);
+
+    return res.status(200).send(participants);
+});
+
 app.post('/insertParticipant', async (req, res) => {
     console.log(req)
     let validationResponse = RequestValidatorService.validatePostRequestBody(req);
